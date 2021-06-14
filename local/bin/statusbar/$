@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Show wifi 📶 and percent strength or 📡 if none.
+# Show 🌐 if connected to ethernet or ❎ if none.
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+	3) notify-send "🌐 Internet module" "\- Click to connect
+`printf '\uf715'`: no wifi connection
+`printf '\uf1eb'`: wifi connection with quality
+`printf '\uf796'`: no ethernet
+`printf '\uf6ff'`: ethernet working
+" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
+	down) wifiicon="\uf715" ;;
+	up) wifiicon="\uf1eb$(awk '/^\s*w/ { print "", int($3 * 100 / 70) "%%" }' /proc/net/wireless)" ;;
+esac
+
+# for dev in /sys/class/net/e*; do
+# 	stat="$(sed "s/down/f796 /;s/up/f6ff/" "$dev/operstate" 2>/dev/null)"
+#     printf "\u${stat}"
+# done
+
+stat=down
+for dev in /sys/class/net/e*; do
+    echo "`$dev/operstate 2>/dev/null`"
+    if [ "`$dev/operstate 2>/dev/null`" -eq 'down' ]
+    then
+        echo 'yes'
+    fi
+	# stat="$(sed "s/down/f796 /;s/up/f6ff/" "$dev/operstate" 2>/dev/null)"
+    # printf "\u${stat}"
+done
+
+
+
+printf  "$wifiicon "

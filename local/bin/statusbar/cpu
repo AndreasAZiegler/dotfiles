@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	3) notify-send "`printf '\uf2c9'` CPU module " "\- Shows CPU temperatur." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+#sensors | awk '/Core 0/ {print "🌡" $3}'
+temp=`sensors | awk '/temp1:/ {print $2; exit}'`
+printf "\uf2c9 $temp\\n"
+#printf "$CP_AWESOME_server"
+#echo "$CP_AWESOME_thermometer_half $temp"
