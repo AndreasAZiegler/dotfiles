@@ -1,0 +1,10 @@
+#!/bin/sh
+
+nm-applet &                  # NetworkManager applet
+ibus-daemon --xim -d &       # IBus daemon for multiple language input
+xscreensaver -no-splash &    # Screensaver
+redshift-gtk &               # Redshift blue filter 
+blueman-applet &             # Bluetooth applet
+lxqt-policykit-agent &
+nextcloud --background &                  # Nextcloud client
+export PATH=/home/andreasziegler/.local/bin/statusbar:$PATH
