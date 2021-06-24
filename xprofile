@@ -9,4 +9,5 @@ blueman-applet &             # Bluetooth applet
 lxqt-policykit-agent &
 nextcloud --background &     # Nextcloud client
 export PATH=/home/ziegler/.local/bin/statusbar:$PATH # Add statusbar apps to PATH
-ibus-daemon -drxR            # For multi language input support
+ibus-daemon -drxR &          # For multi language input support
+safeeyes &                   # Safeeyes reduce and prevent repetitive strain injury (RSI).
