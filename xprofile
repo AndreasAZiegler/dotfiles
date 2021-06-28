@@ -4,9 +4,8 @@ nm-applet &                  # NetworkManager applet
 ibus-daemon --xim -d &       # IBus daemon for multiple language input
 xscreensaver -no-splash &    # Screensaver
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent & # Start geoclue (needed for redshift)
-redshift-gtk &               # Redshift blue filter 
 blueman-applet &             # Bluetooth applet
 lxqt-policykit-agent &
 nextcloud --background &     # Nextcloud client
 export PATH=/home/ziegler/.local/bin/statusbar:$PATH # Add statusbar apps to PATH
-safeeyes &                   # Safeeyes reduce and prevent repetitive strain injury (RSI).
+safeeyes &                   # Safeeyes reduce and prevent repetitive strain injury (RSI)
