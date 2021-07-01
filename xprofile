@@ -12,5 +12,5 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent & # Start geoclue (needed 
 blueman-applet &             # Bluetooth applet
 lxqt-policykit-agent &
 nextcloud --background &     # Nextcloud client
-export PATH=/home/andreasziegler/.local/bin/statusbar:$PATH # Add statusbar apps to PATH
+export PATH=/home/ziegler/.local/bin/statusbar:$PATH # Add statusbar apps to PATH
 safeeyes &                   # Safeeyes reduce and prevent repetitive strain injury (RSI)
