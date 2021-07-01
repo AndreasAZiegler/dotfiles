@@ -248,7 +248,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Let's install coc extensions
-let g:coc_global_extensions = ['coc-cmake', 'coc-css', 'coc-html', 'coc-json', 'coc-julia', 'coc-markdownlint', 'coc-pyright', 'coc-texlab', 'coc-tsserver', 'coc-git']
+let g:coc_global_extensions = ['coc-cmake', 'coc-css', 'coc-git', 'coc-html', 'coc-json', 'coc-julia', 'coc-markdownlint', 'coc-pyright', 'coc-texlab', 'coc-tsserver', 'coc-git']
 " Coc.nvim Settings end
 
 
