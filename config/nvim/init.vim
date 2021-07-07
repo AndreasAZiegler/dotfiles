@@ -72,7 +72,7 @@ nnoremap <leader>nt :NERDTreeToggle<CR> " Open/close NERDTree Tabs with \t
 
 
 " ctrlp.vim Settings
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'a'
 
 
 " LaTeX Settings
