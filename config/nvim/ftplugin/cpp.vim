@@ -2,5 +2,4 @@
 "let b:ale_linters = ['cc', 'ccls', 'cppcheck', 'clangtidy']
 
 " Fix files with ...
-"let b:ale_fixers = ['clang-format', 'clangtidy']
-let b:ale_fixers = ['clang-format']
+let b:ale_fixers = ['clang-format', 'clangtidy']
