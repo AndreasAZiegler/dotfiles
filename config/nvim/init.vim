@@ -254,6 +254,10 @@ let g:coc_global_extensions = ['coc-cmake', 'coc-css', 'coc-git', 'coc-html', 'c
 
 " ALE Settings
 let g:ale_disable_lsp = 1
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+nnoremap <Leader>cf :<C-u>ALEFix<CR>
+vnoremap <Leader>cf :ALEFix<CR>
 
 
 " fzf Settings
