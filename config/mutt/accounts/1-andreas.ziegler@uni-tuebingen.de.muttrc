@@ -3,9 +3,8 @@
 set realname = "andreas.ziegler"
 set from = "andreas.ziegler@uni-tuebingen.de"
 set sendmail = "msmtp -a andreas.ziegler@uni-tuebingen.de"
-set signature = "/home/ziegler/.config/mutt/accounts/1-andreas.ziegler@uni-tuebingen.de.signature"
 alias me andreas.ziegler <andreas.ziegler@uni-tuebingen.de>
-set folder = "/home/ziegler/.local/share/mail/andreas.ziegler@uni-tuebingen.de"
+set folder = "/data/.mail/andreas.ziegler@uni-tuebingen.de"
 set header_cache = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/headers
 set message_cachedir = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/bodies
 set mbox_type = Maildir
@@ -18,9 +17,11 @@ bind index,pager C noop
 bind index gg first-entry
 unmailboxes *
 unalternates *
-macro index o "<shell-escape>mbsync andreas.ziegler@uni-tuebingen.de<enter>" "run mbsync to sync andreas.ziegler@uni-tuebingen.de"
+set signature = /home/ziegler/.config/mutt/accounts/1-andreas.ziegler@uni-tuebingen.de.signature
+unmacro index o
+macro index o "<shell-escape>mw -y andreas.ziegler@uni-tuebingen.de<enter>" "run mbsync to sync andreas.ziegler@uni-tuebingen.de"
 
-mailboxes "=INBOX" "=Admin" "=Covid" "=CSG" "=Research" "=Tech" "=Uni" "=Mail/drafts" "=Mail/s-spam" "=Mail/sent" "=Mail/trash" "=Mail/v-spam"
+mailboxes "=INBOX" "=Admin" "=CSG" "=Covid" "=Mail/drafts" "=Mail/s-spam" "=Mail/sent" "=Mail/trash" "=Mail/v-spam" "=Research" "=Sent" "=Sony" "=Tech" "=Trash" "=Uni"
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
 macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
 macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
@@ -43,3 +44,11 @@ set trash = "+Mail/trash"
 macro index,pager gS "<change-folder>=Mail/v-spam<enter>" "go to spam"
 macro index,pager MS ";<save-message>=Mail/v-spam<enter>" "move mail to spam"
 macro index,pager CS ";<copy-message>=Mail/v-spam<enter>" "copy mail to spam"
+set record = "+Sent"
+macro index,pager gs "<change-folder>=Sent<enter>" "go to sent"
+macro index,pager Ms ";<save-message>=Sent<enter>" "move mail to sent"
+macro index,pager Cs ";<copy-message>=Sent<enter>" "copy mail to sent"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=Trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=Trash<enter>" "copy mail to trash"
+set trash = "+Trash"
