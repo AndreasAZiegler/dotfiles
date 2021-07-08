@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline'                " Status line on the bottom
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'                     " File system explorer
 Plugin 'ctrlpvim/ctrlp.vim'                     " Full path fuzzy finder
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'lervag/vimtex'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion
 Plugin 'dense-analysis/ale'                     " Asynchronous Lint Engine
