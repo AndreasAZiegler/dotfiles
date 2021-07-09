@@ -18,15 +18,19 @@ Plugin 'altercation/vim-colors-solarized'       " Solarized colorization
 Plugin 'vim-airline/vim-airline'                " Status line on the bottom
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'                     " File system explorer
+Plugin 'dominikduda/vim_current_word'           " Highlights the current word
 Plugin 'ctrlpvim/ctrlp.vim'                     " Full path fuzzy finder
+Plugin 'derekwyatt/vim-fswitch'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'lervag/vimtex'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion
 Plugin 'dense-analysis/ale'                     " Asynchronous Lint Engine
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
-Plugin 'junegunn/fzf.vim'
+Plugin 'jackguo380/vim-lsp-cxx-highlight'
+"Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
+"Plugin 'junegunn/fzf.vim'
 Plugin 'APZelos/blamer.nvim'                    " Shows git infos
 Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'wakatime/vim-wakatime'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,13 +72,38 @@ colorscheme solarized
 let g:airline#extensions#tabline#enabled = 1
 
 
-" jistr/vim-nerdtree-tabs Settings
-nnoremap <leader>nt :NERDTreeToggle<CR> " Open/close NERDTree Tabs with \t
+" nerdtree Settings
+" Open/close NERDTree Tabs with \t
+nmap <silent> <leader>nt :NERDTreeToggle<CR>
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
 
 
 " ctrlp.vim Settings
 let g:ctrlp_working_path_mode = 'a'
 
+
+" fswitch.vim Settings
+au! BufEnter *.cpp let b:fswitchdst = 'hpp,h' | let b:fswitchlocs = '../include/**'
+
+" Switch to the file and load it into the current window >
+nmap <silent> <Leader>of :FSHere<cr>
+" Switch to the file and load it into the window on the right >
+nmap <silent> <Leader>ol :FSRight<cr>
+" Switch to the file and load it into a new window split on the right >
+nmap <silent> <Leader>oL :FSSplitRight<cr>
+" Switch to the file and load it into the window on the left >
+nmap <silent> <Leader>oh :FSLeft<cr>
+" Switch to the file and load it into a new window split on the left >
+nmap <silent> <Leader>oH :FSSplitLeft<cr>
+" Switch to the file and load it into the window above >
+nmap <silent> <Leader>ok :FSAbove<cr>
+" Switch to the file and load it into a new window split above >
+nmap <silent> <Leader>oK :FSSplitAbove<cr>
+" Switch to the file and load it into the window below >
+nmap <silent> <Leader>oj :FSBelow<cr>
+" Switch to the file and load it into a new window split below >
+nmap <silent> <Leader>oJ :FSSplitBelow<cr>
 
 " LaTeX Settings
 set grepprg=grep\ -nH\ $* " Use this if "grep" accepts the "-H" argument
@@ -232,21 +261,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <Leader>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <Leader>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <Leader>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <Leader>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <Leader>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <Leader>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <Leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <Leader>p  :<C-u>CocListResume<CR>
 
 " Let's install coc extensions
 let g:coc_global_extensions = ['coc-cmake', 'coc-css', 'coc-git', 'coc-html', 'coc-json', 'coc-julia', 'coc-markdownlint', 'coc-pyright', 'coc-texlab', 'coc-tsserver', 'coc-git']
@@ -263,47 +292,47 @@ vnoremap <Leader>cf :ALEFix<CR>
 
 " fzf Settings
 " This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+"let g:fzf_action = {
+"  \ 'ctrl-t': 'tab split',
+"  \ 'ctrl-x': 'split',
+"  \ 'ctrl-v': 'vsplit' }
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'down': '~40%' }
+"let g:fzf_layout = { 'down': '~40%' }
 
 " - Window using a Vim command
-let g:fzf_layout = { 'window': 'enew' }
-let g:fzf_layout = { 'window': '-tabnew' }
-let g:fzf_layout = { 'window': '10new' }
+"let g:fzf_layout = { 'window': 'enew' }
+"let g:fzf_layout = { 'window': '-tabnew' }
+"let g:fzf_layout = { 'window': '10new' }
 
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+"let g:fzf_colors =
+"\ { 'fg':      ['fg', 'Normal'],
+"  \ 'bg':      ['bg', 'Normal'],
+"  \ 'hl':      ['fg', 'Comment'],
+"  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"  \ 'hl+':     ['fg', 'Statement'],
+"  \ 'info':    ['fg', 'PreProc'],
+"  \ 'border':  ['fg', 'Ignore'],
+"  \ 'prompt':  ['fg', 'Conditional'],
+"  \ 'pointer': ['fg', 'Exception'],
+"  \ 'marker':  ['fg', 'Keyword'],
+"  \ 'spinner': ['fg', 'Label'],
+"  \ 'header':  ['fg', 'Comment'] }
 
 " Enable per-command history
 " - History files will be stored in the specified directory
 " - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
 "   'previous-history' instead of 'down' and 'up'.
-let g:fzf_history_dir = '~/.local/share/fzf-history'
+"let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " fzf.vim Settings
-nnoremap <Leader>t :call fzf#vim#buffer_tags(expand('<cword>'))<CR>
-nnoremap <Leader>gt :call fzf#vim#tags(expand('<cword>'))<CR>
-nnoremap <Leader>ag :call fzf#vim#ag(expand('<cword>'))<CR>
+"nnoremap <Leader>t :call fzf#vim#buffer_tags(expand('<cword>'))<CR>
+"nnoremap <Leader>gt :call fzf#vim#tags(expand('<cword>'))<CR>
+"nnoremap <Leader>ag :call fzf#vim#ag(expand('<cword>'))<CR>
 
 
 " blamer.nvim Settings
