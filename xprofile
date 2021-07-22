@@ -5,6 +5,8 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
 
+export TERM=st-256color
+
 nm-applet &                  # NetworkManager applet
 ibus-daemon --xim -d &       # IBus daemon for multiple language input
 xscreensaver -no-splash &    # Screensaver
