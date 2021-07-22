@@ -3,7 +3,6 @@
 set realname = "andreas.ziegler"
 set from = "andreas.ziegler@uni-tuebingen.de"
 set sendmail = "msmtp -a andreas.ziegler@uni-tuebingen.de"
-set signature = "/home/ziegler/.config/mutt/accounts/1-andreas.ziegler@uni-tuebingen.de.signature"
 alias me andreas.ziegler <andreas.ziegler@uni-tuebingen.de>
 set folder = "/home/ziegler/.local/share/mail/andreas.ziegler@uni-tuebingen.de"
 set header_cache = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/headers
@@ -18,9 +17,11 @@ bind index,pager C noop
 bind index gg first-entry
 unmailboxes *
 unalternates *
-macro index o "<shell-escape>mbsync andreas.ziegler@uni-tuebingen.de<enter>" "run mbsync to sync andreas.ziegler@uni-tuebingen.de"
+set signature = /home/ziegler/.config/mutt/accounts/1-andreas.ziegler@uni-tuebingen.de.signature
+unmacro index o
+macro index o "<shell-escape>mw -y andreas.ziegler@uni-tuebingen.de<enter>" "run mbsync to sync andreas.ziegler@uni-tuebingen.de"
 
-mailboxes "=INBOX" "=Admin" "=Covid" "=CSG" "=Research" "=Tech" "=Uni" "=Mail/drafts" "=Mail/s-spam" "=Mail/sent" "=Mail/trash" "=Mail/v-spam"
+mailboxes "=INBOX" "=Admin" "=CSG" "=Covid" "=Mail/drafts" "=Mail/s-spam" "=Mail/sent" "=Mail/trash" "=Mail/v-spam" "=Research" "=Sony" "=Tech" "=Uni"
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
 macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
 macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"

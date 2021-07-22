@@ -1,9 +1,5 @@
 # vim: filetype=neomuttrc
-source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+source /usr/share/mutt-wizard/mutt-wizard.muttrc
 source /home/ziegler/.config/mutt/accounts/1-andreas.ziegler@uni-tuebingen.de.muttrc
-
-set editor = "/usr/bin/nvim"
-set sig_on_top = yes
-
 macro index,pager i1 '<sync-mailbox><enter-command>source /home/ziegler/.config/mutt/accounts/1-andreas.ziegler@uni-tuebingen.de.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to andreas.ziegler@uni-tuebingen.de"
 macro index,pager i2 '<sync-mailbox><enter-command>source /home/ziegler/.config/mutt/accounts/2-062.127@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to 062.127@gmail.com"
