@@ -5,5 +5,5 @@ source /home/andreasziegler/.config/mutt/accounts/062.127@gmail.com.muttrc
 set editor = "/usr/bin/nvim"
 set sig_on_top = yes
 
-macro index,pager i1 '<sync-mailbox><enter-command>source /home/ziegler/.config/mutt/accounts/062.127@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to 062.127@gmail.com"
-macro index,pager i2 '<sync-mailbox><enter-command>source /home/ziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to andreas.ziegler@uni-tuebingen.de"
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/andreasziegler/.config/mutt/accounts/062.127@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to 062.127@gmail.com"
+macro index,pager i2 '<sync-mailbox><enter-command>source /home/andreasziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to andreas.ziegler@uni-tuebingen.de"
