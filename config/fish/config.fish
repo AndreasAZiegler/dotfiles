@@ -6,6 +6,14 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+alias ls='lsd'
+
+# nnn settings
+alias nnn="tmux new 'nnn -a -P p'"
+set -x NNN_FIFO /tmp/nnn.fifo
+set -x NNN_PLUG 'p:preview-tui'
+set -x TERMINAL $TERM
+
 # st DEL key fix
 if status is-interactive
     switch $TERM
