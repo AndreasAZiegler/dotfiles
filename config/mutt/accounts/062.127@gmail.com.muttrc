@@ -5,8 +5,8 @@ set from = "062.127@gmail.com"
 set sendmail = "msmtp -a 062.127@gmail.com"
 alias me 062.127 <062.127@gmail.com>
 set folder = "/data/.mail/062.127@gmail.com"
-set header_cache = /home/ziegler/.cache/mutt-wizard/062.127@gmail.com/headers
-set message_cachedir = /home/ziegler/.cache/mutt-wizard/062.127@gmail.com/bodies
+set header_cache = /home/andreasziegler/.cache/mutt-wizard/062.127@gmail.com/headers
+set message_cachedir = /home/andreasziegler/.cache/mutt-wizard/062.127@gmail.com/bodies
 set mbox_type = Maildir
 
 

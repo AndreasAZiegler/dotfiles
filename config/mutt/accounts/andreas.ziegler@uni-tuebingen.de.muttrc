@@ -5,8 +5,8 @@ set from = "andreas.ziegler@uni-tuebingen.de"
 set sendmail = "msmtp -a andreas.ziegler@uni-tuebingen.de"
 alias me andreas.ziegler <andreas.ziegler@uni-tuebingen.de>
 set folder = "/data/.mail/andreas.ziegler@uni-tuebingen.de"
-set header_cache = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/headers
-set message_cachedir = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/bodies
+set header_cache = /home/andreasziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/headers
+set message_cachedir = /home/andreasziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/bodies
 set mbox_type = Maildir
 
 
@@ -17,7 +17,7 @@ bind index,pager C noop
 bind index gg first-entry
 unmailboxes *
 unalternates *
-set signature = /home/ziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.signature
+set signature = /home/andreasziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.signature
 unmacro index o
 macro index o "<shell-escape>mw -y andreas.ziegler@uni-tuebingen.de<enter>" "run mbsync to sync andreas.ziegler@uni-tuebingen.de"
 
