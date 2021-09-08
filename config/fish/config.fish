@@ -6,6 +6,14 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+alias ls='lsd'
+
+# nnn settings
+alias nnn="tmux new 'nnn -a -P p'"
+set -x NNN_FIFO /tmp/nnn.fifo
+set -x NNN_PLUG 'p:preview-tui'
+set -x TERMINAL $TERM
+
 # st DEL key fix
 if status is-interactive
     switch $TERM
@@ -32,3 +40,10 @@ if status is-interactive
         end
     end
 end
+
+# Docker alias
+function docker-dev
+  source ~/rocker-venv/bin/activate.fish
+  TERM=xterm rocker --nvidia --x11 --user --home --privileged --env TERM=xterm --name ros-dev --volume /dev/bus/usb:/dev/bus/usb --volume /data:/data -- prophesee-ros
+end
+alias docker-connect="docker exec -it (docker ps -qf "name=ros-dev") /bin/bash"
