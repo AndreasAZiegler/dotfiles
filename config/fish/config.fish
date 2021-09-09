@@ -9,7 +9,7 @@ end
 alias ls='lsd'
 
 # nnn settings
-alias nnn="tmux new 'nnn -a -P p'"
+alias nnn="tmux new 'command nnn -a -P p'"
 set -x NNN_FIFO /tmp/nnn.fifo
 set -x NNN_PLUG 'p:preview-tui'
 set -x TERMINAL $TERM
