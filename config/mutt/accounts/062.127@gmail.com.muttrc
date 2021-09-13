@@ -17,7 +17,7 @@ bind index,pager C noop
 bind index gg first-entry
 unmailboxes *
 unalternates *
-unset signature
+set signature = /home/andreasziegler/.config/mutt/accounts/062.127@gmail.com.signature
 unmacro index o
 macro index o "<shell-escape>mw -y 062.127@gmail.com<enter>" "run mbsync to sync 062.127@gmail.com"
 
