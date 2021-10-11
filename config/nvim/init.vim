@@ -30,6 +30,7 @@ Plugin 'jackguo380/vim-lsp-cxx-highlight'
 "Plugin 'junegunn/fzf.vim'
 Plugin 'APZelos/blamer.nvim'                    " Shows git infos
 Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'kdheepak/JuliaFormatter.vim'
 Plugin 'wakatime/vim-wakatime'
 
 " All of your Plugins must be added before the following line
@@ -337,3 +338,7 @@ vnoremap <Leader>cf :ALEFix<CR>
 
 " blamer.nvim Settings
 let g:blamer_enabled = 1
+
+
+" JulliaFormater settings
+let g:JuliaFormatter_use_sysimage=1
