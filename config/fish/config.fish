@@ -44,6 +44,6 @@ end
 # Docker alias
 function docker-dev
   source ~/rocker_venv/bin/activate.fish
-  TERM=xterm rocker --nvidia --x11 --user --home --privileged --env TERM=xterm --name ros-dev --volume /dev/bus/usb:/dev/bus/usb --volume /data:/data -- prophesee-ros
+  TERM=xterm rocker --x11 --user --home --privileged --env TERM=xterm --name ros-dev --volume /dev/bus/usb:/dev/bus/usb --volume /data:/data -- prophesee-ros
 end
 alias docker-connect="docker exec -it (docker ps -qf "name=ros-dev") /bin/bash"
