@@ -11,8 +11,7 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" let Vundle manage Vundle, required Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'       " Solarized colorization
 Plugin 'vim-airline/vim-airline'                " Status line on the bottom
@@ -339,6 +338,5 @@ vnoremap <Leader>cf :ALEFix<CR>
 " blamer.nvim Settings
 let g:blamer_enabled = 1
 
-
-" JulliaFormater settings
+" JuliaFormatter Settings
 let g:JuliaFormatter_use_sysimage=1
