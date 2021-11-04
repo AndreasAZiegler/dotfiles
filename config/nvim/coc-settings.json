@@ -11,5 +11,8 @@
           "highlight": { "lsRanges" : true }
         }
     }
+  },
+  "markdownlint.config":{
+    "line_length": false
   }
 }
