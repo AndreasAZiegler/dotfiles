@@ -3,7 +3,7 @@
 set realname = "andreas.ziegler"
 set from = "andreas.ziegler@uni-tuebingen.de"
 set sendmail = "msmtp -a andreas.ziegler@uni-tuebingen.de"
-alias me andreas.ziegler <andreas.ziegler@uni-tuebingen.de>
+alias me Andreas Ziegler <andreas.ziegler@uni-tuebingen.de>
 set folder = "/data/.mail/andreas.ziegler@uni-tuebingen.de"
 set header_cache = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/headers
 set message_cachedir = /home/ziegler/.cache/mutt-wizard/andreas.ziegler@uni-tuebingen.de/bodies
