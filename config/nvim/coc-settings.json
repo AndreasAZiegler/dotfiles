@@ -12,7 +12,7 @@
         }
     }
   },
-  "markdownlint.config":{
+  "markdownlint.config": {
     "line_length": false
   }
 }
