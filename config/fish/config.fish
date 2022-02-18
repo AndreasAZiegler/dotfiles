@@ -32,11 +32,11 @@ if status is-interactive
     if set -q is_simple_terminal
         tput smkx ^/dev/null
         function fish_enable_keypad_transmit --on-event fish_postexec
-            tput smkx ^/dev/null
+            tput smkx
         end
 
         function fish_disable_keypad_transmit --on-event fish_preexec
-            tput rmkx ^/dev/null
+            tput rmkx
         end
     end
 end
