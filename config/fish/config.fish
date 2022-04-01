@@ -30,7 +30,6 @@ if status is-interactive
     end
 
     if set -q is_simple_terminal
-        tput smkx ^/dev/null
         function fish_enable_keypad_transmit --on-event fish_postexec
             tput smkx
         end
