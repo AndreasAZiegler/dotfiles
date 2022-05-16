@@ -1,6 +1,6 @@
 # vim: filetype=neomuttrc
 # muttrc file for account andreas.ziegler@uni-tuebingen.de
-set realname = "andreas.ziegler"
+set realname = "Andreas Ziegler"
 set from = "andreas.ziegler@uni-tuebingen.de"
 set sendmail = "msmtp -a andreas.ziegler@uni-tuebingen.de"
 alias me Andreas Ziegler <andreas.ziegler@uni-tuebingen.de>
