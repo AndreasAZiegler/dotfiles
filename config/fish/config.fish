@@ -2,6 +2,9 @@
 set -x EDITOR nvim
 set -x BROWSER brave
 
+# Make Java work in a non-reparenting window manager
+set -x _JAVA_AWT_WM_NONREPARENTING 1
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
