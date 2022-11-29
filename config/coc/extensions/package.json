@@ -10,5 +10,6 @@
     "coc-pyright": ">=1.1.215",
     "coc-texlab": ">=3.2.0",
     "coc-tsserver": ">=1.9.9"
-  }
+  },
+  "lastUpdate": 1669756106100
 }
