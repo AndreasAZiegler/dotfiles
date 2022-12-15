@@ -31,6 +31,7 @@ macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
 macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"
 macro index,pager Cd ";<copy-message>=[Gmail]/Drafts<enter>" "copy mail to drafts"
 set record = "+[Gmail]/Sent Mail"
+set copy = no
 macro index,pager gs "<change-folder>=[Gmail]/Sent<enter>" "go to sent"
 macro index,pager Ms ";<save-message>=[Gmail]/Sent<enter>" "move mail to sent"
 macro index,pager Cs ";<copy-message>=[Gmail]/Sent<enter>" "copy mail to sent"
