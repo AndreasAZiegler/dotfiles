@@ -43,6 +43,9 @@ if status is-interactive
     end
 end
 
+# Set fzf variable search to Ctrl+Alt+v
+fzf_configure_bindings --variables=\e\cv
+
 # Docker alias
 function docker-dev
   source ~/rocker_venv/bin/activate.fish
