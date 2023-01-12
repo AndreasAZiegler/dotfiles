@@ -1,13 +1,14 @@
 {
   "dependencies": {
-    "coc-git": ">=2.5.4",
+    "coc-git": ">=2.6.0",
     "coc-css": ">=2.0.0",
-    "coc-json": ">=1.7.1",
     "coc-cmake": ">=0.2.1",
-    "coc-html": ">=1.8.0",
+    "coc-json": ">=1.8.0",
+    "coc-markdownlint": ">=1.27.0",
     "coc-julia": ">=0.13.1",
-    "coc-markdownlint": ">=1.26.0",
-    "coc-texlab": ">=3.2.0",
-    "coc-pyright": ">=1.1.280"
+    "coc-html": ">=1.8.0",
+    "coc-tsserver": ">=2.1.0",
+    "coc-pyright": ">=1.1.284",
+    "coc-texlab": ">=3.2.0"
   }
 }
