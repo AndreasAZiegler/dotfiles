@@ -1,0 +1,17 @@
+profile staefa {
+        output "Samsung Electric Company U28E590 HTPK118955" mode 2560x1440 position 0,450
+        output "Dell Inc. DELL P2423DE DWTL1L3" mode 2560x1440 position 2560,0 transform 270
+        output eDP-1 mode 2880x1800 position 4000,650
+        exec ~/bin/move-workspaces.sh staefa
+}
+
+profile tuebingen {
+        output eDP-1 mode 2880x1800 position 959,469 scale 1.5
+        output "LG Electronics LG HDR 4K 0x0001224A" mode 2560x1440 position 2880,380
+        output "Philips Consumer Electronics Company PHL 272B8Q UK01841003832" mode 2560x1440 position 5440,0 transform 90
+        exec ~/bin/move-workspaces.sh tuebingen
+}
+
+profile {
+        output eDP-1 position 0,0 scale 1.5
+}

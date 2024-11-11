@@ -1,0 +1,102 @@
+{
+    "layer": "bottom", // This ensures that bemenu is shown below waybar
+
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        "idle_inhibitor",
+        "network",
+        "battery",
+        "clock",
+        "sway/language",
+        "custom/seogi",
+        "custom/pipewire",
+        "tray"
+    ],
+
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "icon": true
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 5,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format": "{:%d.%m. %H:%M}",
+        "timezone": "Europe/Zurich"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "on-click": "alacritty -e top"
+    },
+    "memory": {
+        "format": " {}%",
+        "on-click": "alacritty -e top"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+        "on-click": "brightnessctl s +5%",
+        "on-click-right": "brightnessctl s 5%-"
+    },
+    "battery": {
+        "states": {
+            "good": 90,
+            "warning": 15,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "⚠ Offline",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "alacritty -e iwctl"
+    },
+    "custom/seogi": {
+        "exec": "/usr/bin/seogi-waybar -e 한 -d EN",
+        "return-type": "json",
+    },
+}
