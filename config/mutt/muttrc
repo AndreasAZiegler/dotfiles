@@ -1,6 +1,6 @@
 # vim: filetype=neomuttrc
 source /usr/share/mutt-wizard/mutt-wizard.muttrc
-source /home/andreasziegler/.config/mutt/accounts/062.127@gmail.com.muttrc
+source /home/andreasziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.muttrc
 source /home/andreasziegler/.config/mutt/mutt-colors-solarized-light-16.muttrc
 
 set editor = "/usr/bin/nvim"
