@@ -21,7 +21,7 @@ set signature = /home/andreasziegler/.config/mutt/accounts/andreas.ziegler@uni-t
 unmacro index o
 macro index o "<shell-escape>mw -y andreas.ziegler@uni-tuebingen.de<enter>" "run mbsync to sync andreas.ziegler@uni-tuebingen.de"
 
-mailboxes "=INBOX" "=admin" "=colleagues" "=covid" "=csg" "=enquiries" "=hardware" "=lectures" "=Mail/drafts" "=Mail/s-spam" "=Mail/sent" "=Mail/trash" "=Mail/v-spam" "=research" "=sony" "=support" "=tcml" "=tech" "=thesis" "=uni"
+mailboxes "=INBOX" "=admin" "=collaborations" "=colleagues" "=covid" "=csg" "=enquiries" "=feedback" "=hardware" "=lectures" "=Mail/drafts" "=Mail/s-spam" "=Mail/sent" "=Mail/trash" "=Mail/v-spam" "=research" "=sony" "=submissions" "=support" "=tcml" "=tech" "=thesis" "=uni"
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
 macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
 macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
