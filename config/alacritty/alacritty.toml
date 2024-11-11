@@ -1,0 +1,24 @@
+general.import = ["~/.config/alacritty/themes/themes/solarized_light.toml"]
+
+[colors.line_indicator]
+background = "None"
+foreground = "None"
+
+[font]
+size = 15.0
+
+[font.bold]
+family = "JetBrainsMonoNerdFont"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMonoNerdFont"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMonoNerdFont"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMonoNerdFont"
+style = "Regular"
