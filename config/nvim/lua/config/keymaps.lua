@@ -3,4 +3,4 @@
 -- Add any additional keymaps here
 
 -- Map "<leader>ol" to switch between header and implementation:
-vim.keymap.set({ "n", "v" }, "<leader>ol", "<Cmd>ClangdSwitchSourceHeader<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>ol", "<Cmd>LspClangdSwitchSourceHeader<CR>")
