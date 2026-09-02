@@ -1,13 +1,17 @@
 # vim: filetype=neomuttrc
 source /usr/share/mutt-wizard/mutt-wizard.muttrc
-source /home/andreasziegler/.config/mutt/accounts/062.127@gmail.com.muttrc
+source /home/andreasziegler/.config/mutt/accounts/andreas@aaz.fyi.muttrc
 source /home/andreasziegler/.config/mutt/mutt-colors-solarized-light-16.muttrc
 
 set editor = "/usr/bin/nvim"
 set sig_on_top = yes
+set mailcap_path = "~/.mailcap"
 
-macro index,pager i1 '<sync-mailbox><enter-command>source /home/ziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to andreas.ziegler@uni-tuebingen.de"
-macro index,pager i2 '<sync-mailbox><enter-command>source /home/ziegler/.config/mutt/accounts/062.127@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to 062.127@gmail.com"
+macro index,pager b "<view-attachments><search>html<enter><view-mailcap><exit>" "view HTML in browser"
+
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/andreasziegler/.config/mutt/accounts/andreas@aaz.fyi.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to andreas@aaz.fyi"
+macro index,pager i2 '<sync-mailbox><enter-command>source /home/andreasziegler/.config/mutt/accounts/andreas.ziegler@uni-tuebingen.de.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to andreas.ziegler@uni-tuebingen.de"
+macro index,pager i3 '<sync-mailbox><enter-command>source /home/andreasziegler/.config/mutt/accounts/062.127@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to 062.127@gmail.com"
 
 set query_command = "khard email --parsable %s"
 bind editor <Tab> complete-query
