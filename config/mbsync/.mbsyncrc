@@ -1,0 +1,78 @@
+IMAPStore 062.127@gmail.com-remote
+Host imap.gmail.com
+Port 993
+User 062.127@gmail.com
+PassCmd "pass 062.127@gmail.com"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore 062.127@gmail.com-local
+Subfolders Verbatim
+Path /data/.mail/062.127@gmail.com/
+Inbox /data/.mail/062.127@gmail.com/INBOX
+
+Channel 062.127@gmail.com
+Expunge Both
+Far :062.127@gmail.com-remote:
+Near :062.127@gmail.com-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+IMAPAccount andreas@aaz.fyi
+Host 127.0.0.1
+Port 1143
+User andreas@aaz.fyi
+PassCmd "pass andreas@aaz.fyi"
+CertificateFile ~/.cert/protonmail.crt
+TLSType STARTTLS
+
+IMAPStore andreas@aaz.fyi-remote
+Account andreas@aaz.fyi
+
+MaildirStore andreas@aaz.fyi-local
+Path /data/.mail/andreas@aaz.fyi/
+Inbox /data/.mail/andreas@aaz.fyi/Inbox
+SubFolders Verbatim
+
+Channel andreas@aaz.fyi
+Far :andreas@aaz.fyi-remote:
+Near :andreas@aaz.fyi-local:
+#Patterns "INBOX" "Archive" "Sent"
+Patterns *
+Create Both
+Sync All
+Expunge Both
+SyncState *
+# End profile
+
+
+IMAPStore andreas.ziegler@uni-tuebingen.de-remote
+Host mailserv.uni-tuebingen.de
+Port 993
+User iieza01
+PassCmd "pass andreas.ziegler@uni-tuebingen.de"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore andreas.ziegler@uni-tuebingen.de-local
+Subfolders Verbatim
+Path /data/.mail/andreas.ziegler@uni-tuebingen.de/
+Inbox /data/.mail/andreas.ziegler@uni-tuebingen.de/INBOX
+
+Channel andreas.ziegler@uni-tuebingen.de
+Expunge Both
+Far :andreas.ziegler@uni-tuebingen.de-remote:
+Near :andreas.ziegler@uni-tuebingen.de-local:
+Patterns * 
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
