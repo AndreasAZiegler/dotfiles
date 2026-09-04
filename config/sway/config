@@ -23,7 +23,8 @@ set $term alacritty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu j4-dmenu-desktop --dmenu="dmenu -i" --term="alacritty" | xargs swaymsg exec --
-set $menu j4-dmenu-desktop --dmenu='bemenu -i -p ">>" --fn "Noto Sans 12"' --term='alacritty' | xargs swaymsg exec --
+# set $menu j4-dmenu-desktop --dmenu='bemenu -i -p ">>" --fn "Noto Sans 12"' --term='alacritty' | xargs swaymsg exec --
+set $menu 'rofi -modi drun,run,window -show drun -config ~/.config/sway/rofi/rofi.rasi'
 
 ### Output configuration
 #
@@ -37,16 +38,18 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # systemd/dbus env variables
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec systemctl --user restart xdg-desktop-portal.service xdg-desktop-portal-wlr.service
+exec systemctl --user start sway-session.target
 
 # Autostart
 # NetworkManager applet
 exec nm-applet
 # Start geoclue (needed for redshift)
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec redshift-gtk
+exec gammastep-indicator
 # Bluetooth applet
 exec blueman-applet
 exec lxqt-policykit-agent
@@ -276,8 +279,7 @@ mode "resize" {
 bindsym $mod+x mode "resize"
 
 # Screenshot
-bindsym print       exec $HOME/bin/take_screenshot.sh
-bindsym Ctrl+print  exec $HOME/bin/take_fullscreen_screenshot.sh
+bindsym print exec grim -g "$(slurp)" - | satty -f -
 
 # Screen lock
 bindsym $mod+Ctrl+L exec swaylock --clock --screenshot --effect-pixelate=10
@@ -294,3 +296,4 @@ bar {
 exec mako
 
 include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*.conf

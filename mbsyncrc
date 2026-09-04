@@ -76,3 +76,29 @@ SyncState *
 MaxMessages 0
 ExpireUnread no
 # End profile
+
+IMAPStore andreas.ziegler@robotics.utias.utoronto.ca-remote
+Host imap.gmail.com
+Port 993
+User andreas.ziegler@robotics.utias.utoronto.ca
+PassCmd "pass andreas.ziegler@robotics.utias.utoronto.ca"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore andreas.ziegler@robotics.utias.utoronto.ca-local
+Subfolders Verbatim
+Path /home/andreasziegler/.local/share/mail/andreas.ziegler@robotics.utias.utoronto.ca/
+Inbox /home/andreasziegler/.local/share/mail/andreas.ziegler@robotics.utias.utoronto.ca/INBOX
+
+Channel andreas.ziegler@robotics.utias.utoronto.ca
+Expunge Both
+Far :andreas.ziegler@robotics.utias.utoronto.ca-remote:
+Near :andreas.ziegler@robotics.utias.utoronto.ca-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
