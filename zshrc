@@ -1,6 +1,5 @@
 # Alias
-alias lvim="~/.local/bin/lvim"
-alias ls="lsd"
+alias ls="/usr/bin/lsd"
 
 # Docker alias
 docker-dev() {
