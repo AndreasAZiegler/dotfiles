@@ -1,0 +1,174 @@
+{
+    "modules-left": ["sway/workspaces"],
+    "modules-right": [
+        "tray",
+        "privacy",
+        "power-profiles-daemon",
+        "pulseaudio",
+        "temperature#cpu",
+        "cpu",
+        "memory",
+        "network",
+        "backlight",
+        "battery",
+        "custom/power",
+        "clock"
+        ],
+
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "11": "1",
+            "12": "2",
+            "13": "3",
+            "14": "4",
+            "15": "5",
+            "16": "6",
+            "17": "7",
+            "18": "8",
+            "19": "9",
+            "21": "1",
+            "22": "2",
+            "23": "3",
+            "24": "4",
+            "25": "5",
+            "26": "6",
+            "27": "7",
+            "28": "8",
+            "29": "9"
+        }
+    },
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            { "type": "screenshare", "tooltip": true, "tooltip-icon-size": 24 },
+            { "type": "audio-out",   "tooltip": true, "tooltip-icon-size": 24 },
+            { "type": "audio-in",    "tooltip": true, "tooltip-icon-size": 24 }
+        ]
+    },
+
+    "tray": {
+        "icon-size": 17,
+        "spacing": 5,
+        "show-passive-items": true
+    },
+
+    "power-profiles-daemon": {
+        "format": " {icon} ",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "setsid $TERMINAL -e pulsemixer"
+    },
+
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon8/temp1_input",
+        "format": "{icon} {temperatureC}°C",
+        "interval": 1,
+        "format-icons": ["", "", "", ""],
+        "critical-threshold": 80,
+        "tooltip-format": "CPU",
+        "on-click-right": "setsid $TERMINAL -e htop"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "on-click": "sh -lc 'notify-send \" CPU hogs\" \"$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)\"'",
+        "on-click-right": "setsid $TERMINAL -e htop"
+    },
+
+    "memory": {
+        "format": "{}% ",
+        "on-click": "sh -lc 'notify-send \" Memory hogs\" \"$(ps axch -o cmd:20,%mem --sort=-%mem | head)\"'",
+        "on-click-right": "setsid $TERMINAL -e htop"
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": " ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "setsid $TERMINAL -e nmtui"
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": "{:%a %d - %H:%M}",
+        // "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span color='#5294e2'><b>{}</b></span>",
+                "days": "<span color='#e0e5eb'><b>{}</b></span>",
+                "weekdays": "<span color='#b5d2f2'><b>{}</b></span>",
+                "today": "<span color='#bf616a'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    }
+}
