@@ -12,6 +12,12 @@ profile tuebingen {
         exec ~/bin/move-workspaces.sh tuebingen
 }
 
+profile dufferin {
+        output eDP-1 mode 3200x2000 position 0,721 scale 1.5
+        output "Ancor Communications Inc ASUS PB278 E3LMTF122570" mode 2560x1440 position 1600,0
+        exec ~/bin/move-workspaces.sh dufferin
+}
+
 profile {
         output eDP-1 position 0,0 scale 1.5
 }
