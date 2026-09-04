@@ -277,8 +277,7 @@ mode "resize" {
 bindsym $mod+x mode "resize"
 
 # Screenshot
-bindsym print       exec $HOME/bin/take_screenshot.sh
-bindsym Ctrl+print  exec $HOME/bin/take_fullscreen_screenshot.sh
+bindsym print exec grim -g "$(slurp)" - | satty -f -
 
 # Screen lock
 bindsym $mod+Ctrl+L exec swaylock --clock --screenshot --effect-pixelate=10
