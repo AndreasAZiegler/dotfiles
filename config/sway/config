@@ -23,7 +23,8 @@ set $term alacritty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # set $menu j4-dmenu-desktop --dmenu="dmenu -i" --term="alacritty" | xargs swaymsg exec --
-set $menu j4-dmenu-desktop --dmenu='bemenu -i -p ">>" --fn "Noto Sans 12"' --term='alacritty' | xargs swaymsg exec --
+# set $menu j4-dmenu-desktop --dmenu='bemenu -i -p ">>" --fn "Noto Sans 12"' --term='alacritty' | xargs swaymsg exec --
+set $menu 'rofi -modi drun,run,window -show drun -config ~/.config/sway/rofi/rofi.rasi'
 
 ### Output configuration
 #
