@@ -1,0 +1,13 @@
+text/html; brave -new-tab '%s' &; test=test -n "$DISPLAY" ; nametemplate=%s.html ; description="HTML Text"
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+Image/JPEG; display %s
+Image/PNG; display %s
+application/pdf; evince %s
+application/msword; libreoffice %s
+application/excel; libreoffice %s
+application/msexcel; libreoffice %s
+application/x-excel; libreoffice %s
+application/vnd.ms-excel; libreoffice %s
+application/x-msexcel; libreoffice %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice '%s';  description="Office Open XML Spreadsheet"; nametemplate=%s.xlsx
+application/ppt; libreoffice %s
