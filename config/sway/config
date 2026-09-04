@@ -47,7 +47,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 exec nm-applet
 # Start geoclue (needed for redshift)
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec redshift-gtk
+exec gammastep-indicator
 # Bluetooth applet
 exec blueman-applet
 exec lxqt-policykit-agent
