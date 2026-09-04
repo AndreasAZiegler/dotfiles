@@ -1,3 +1,6 @@
+# zsh settings
+PROMPT='%n@%m%# '
+
 # Alias
 alias ls="/usr/bin/lsd"
 
