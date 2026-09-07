@@ -12,6 +12,8 @@
         "backlight",
         "battery",
         "custom/power",
+        "sway/language",
+        "custom/seogi",
         "clock"
         ],
 
@@ -142,6 +144,16 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+    },
+
+    "sway/language": {
+        "format": "{short}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    },
+
+    "custom/seogi": {
+        "exec": "/usr/bin/seogi-waybar -e 한 -d EN",
+        "return-type": "json"
     },
 
     "clock": {
