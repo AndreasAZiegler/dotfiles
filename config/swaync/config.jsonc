@@ -1,0 +1,8 @@
+{
+  "notification-visibility": {
+    "example": {
+      "state": "ignored",
+      "app-name": "blueman"
+    }
+  }
+}

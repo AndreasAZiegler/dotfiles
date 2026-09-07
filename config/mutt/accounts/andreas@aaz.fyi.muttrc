@@ -21,7 +21,7 @@ set signature = /home/andreasziegler/.config/mutt/accounts/andreas@aaz.fyi.signa
 unmacro index o
 macro index o "<shell-escape>mw -y andreas@aaz.fyi<enter>" "run mbsync to sync andreas@aaz.fyi"
 
-mailboxes "=All Mail" "=Archive" "=Drafts" "=Folders/accounts" "=Folders/admin" "=Folders/family" "=Folders/jobsearch" "=Folders/newsletters" "=Folders/people" "=Folders/quaker" "=Folders/quaker/montmirail_2027" "=Folders/quaker/qcea" "=Folders/quaker/sym" "=Folders/quaker/zürich" "=Folders/receipts" "=Folders/research" "=Folders/support" "=Inbox" "=Labels/062.127@gmail.com" "=Recovered Messages" "=Sent" "=Spam" "=Starred" "=Trash"
+mailboxes "=All Mail" "=Archive" "=Drafts" "=Folders/accounts" "=Folders/admin" "=Folders/family" "=Folders/jobsearch" "=Folders/newsletters" "=Folders/people" "=Folders/quaker" "=Folders/quaker/montmirail_2027" "=Folders/quaker/qcea" "=Folders/quaker/sym" "=Folders/quaker/zürich" "=Folders/receipts" "=Folders/research" "=Folders/support" "=Inbox" "=Labels/062.127@gmail.com" "=Sent" "=Spam" "=Starred" "=Trash"
 macro index,pager gi "<change-folder>=Inbox<enter>" "go to inbox"
 macro index,pager Mi ";<save-message>=Inbox<enter>" "move mail to inbox"
 macro index,pager Ci ";<copy-message>=Inbox<enter>" "copy mail to inbox"
