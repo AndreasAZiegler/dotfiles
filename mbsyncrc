@@ -44,7 +44,7 @@ Channel andreas@aaz.fyi
 Far :andreas@aaz.fyi-remote:
 Near :andreas@aaz.fyi-local:
 #Patterns "INBOX" "Archive" "Sent"
-Patterns *
+Patterns * !"All Mail" !"Recovered Messages" !Starred !Labels*
 Create Both
 Sync All
 Expunge Both
