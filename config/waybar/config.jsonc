@@ -18,27 +18,7 @@
         ],
 
     "sway/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "11": "1",
-            "12": "2",
-            "13": "3",
-            "14": "4",
-            "15": "5",
-            "16": "6",
-            "17": "7",
-            "18": "8",
-            "19": "9",
-            "21": "1",
-            "22": "2",
-            "23": "3",
-            "24": "4",
-            "25": "5",
-            "26": "6",
-            "27": "7",
-            "28": "8",
-            "29": "9"
-        }
+        "format": "{value}"
     },
 
     "privacy": {
@@ -83,31 +63,31 @@
         "hwmon-path": "/sys/class/hwmon/hwmon8/temp1_input",
         "format": "{icon} {temperatureC}°C",
         "interval": 1,
-        "format-icons": ["", "", "", ""],
+        "format-icons": ["", "", "", ""],
         "critical-threshold": 80,
         "tooltip-format": "CPU",
         "on-click-right": "setsid $TERMINAL -e htop"
     },
 
     "cpu": {
-        "format": "{usage}% ",
+        "format": " {usage}% ",
         "tooltip": false,
         "on-click": "sh -lc 'notify-send \" CPU hogs\" \"$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)\"'",
         "on-click-right": "setsid $TERMINAL -e htop"
     },
 
     "memory": {
-        "format": "{}% ",
+        "format": " {}% ",
         "on-click": "sh -lc 'notify-send \" Memory hogs\" \"$(ps axch -o cmd:20,%mem --sort=-%mem | head)\"'",
         "on-click-right": "setsid $TERMINAL -e htop"
     },
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": " ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "on-click-right": "setsid $TERMINAL -e nmtui"
@@ -115,8 +95,12 @@
 
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+        "on-click": "brightnessctl set +5%",
+        "on-click-right": "brightnessctl set 5%-",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
     },
 
     "battery": {
@@ -125,14 +109,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
+        "format-plugged": "{icon} {capacity}%",
+        "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
 
     "sway/language": {

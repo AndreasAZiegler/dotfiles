@@ -1,14 +1,3 @@
-account 062.127@gmail.com
-host smtp.gmail.com
-port 587
-from 062.127@gmail.com
-user 062.127@gmail.com
-passwordeval "pass 062.127@gmail.com"
-auth on
-tls on
-tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-logfile /home/andreasziegler/.config/msmtp/msmtp.log
-
 account andreas@aaz.fyi
 host 127.0.0.1
 port 1025
@@ -21,12 +10,34 @@ tls_starttls on
 tls_trust_file	~/.cert/protonmail.crt
 logfile /home/andreasziegler/.config/msmtp/msmtp.log
 
+account andreas.ziegler@robotics.utias.utoronto.ca
+host smtp.gmail.com
+port 587
+from andreas.ziegler@robotics.utias.utoronto.ca
+user andreas.ziegler@robotics.utias.utoronto.ca
+passwordeval "pass andreas.ziegler@robotics.utias.utoronto.ca"
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/andreasziegler/.config/msmtp/msmtp.log
+
 account andreas.ziegler@uni-tuebingen.de
 host smtpserv.uni-tuebingen.de
 port 587
 from andreas.ziegler@uni-tuebingen.de
 user iieza01
 passwordeval "pass andreas.ziegler@uni-tuebingen.de"
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/andreasziegler/.config/msmtp/msmtp.log
+
+account 062.127@gmail.com
+host smtp.gmail.com
+port 587
+from 062.127@gmail.com
+user 062.127@gmail.com
+passwordeval "pass 062.127@gmail.com"
 auth on
 tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
