@@ -14,10 +14,10 @@ set signature = /home/andreasziegler/.config/mutt/accounts/andreas.ziegler@robot
 set spoolfile = +INBOX
 set postponed = +Drafts
 set trash = +Trash
-set record = +Sent
+unset record
 
 macro index o "<shell-escape>mw -y andreas.ziegler@robotics.utias.utoronto.ca<enter>" "run mbsync to sync andreas.ziegler@robotics.utias.utoronto.ca"
 macro index \eg "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a andreas.ziegler@robotics.utias.utoronto.ca<enter>"  "publish GPG key to WKS provider"
 macro index \eh "<pipe-message>/usr/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a andreas.ziegler@robotics.utias.utoronto.ca<enter>" "confirm GPG publication"
 
-mailboxes "=INBOX" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=admin" "=external" "=collaborations" "=supervision" "=workshops/icra2027" "=university"
+mailboxes "=INBOX" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=admin" "=external" "=fellowships" "=collaborations" "=supervision" "=support" "=workshops/icra2027" "=university"
