@@ -40,15 +40,28 @@ Path /data/.mail/andreas@aaz.fyi/
 Inbox /data/.mail/andreas@aaz.fyi/Inbox
 SubFolders Verbatim
 
-Channel andreas@aaz.fyi
+Channel andreas@aaz.fyi-system
 Far :andreas@aaz.fyi-remote:
 Near :andreas@aaz.fyi-local:
-#Patterns "INBOX" "Archive" "Sent"
-Patterns * !"All Mail" !"Recovered Messages" !Starred !Labels*
+Patterns INBOX Archive Drafts Sent Spam Trash
 Create Both
 Sync All
 Expunge Both
 SyncState *
+
+# Proton Bridge exposes custom folders under "Folders/"; strip that prefix locally
+Channel andreas@aaz.fyi-folders
+Far :andreas@aaz.fyi-remote:"Folders/"
+Near :andreas@aaz.fyi-local:
+Patterns * !INBOX !Inbox !"All Mail" !Archive !Drafts !Labels* !"Recovered Messages" !Sent !Spam !Starred !Trash
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Group andreas@aaz.fyi
+Channel andreas@aaz.fyi-system
+Channel andreas@aaz.fyi-folders
 # End profile
 
 IMAPStore andreas.ziegler@robotics.utias.utoronto.ca-remote
