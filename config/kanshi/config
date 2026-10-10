@@ -2,27 +2,27 @@ profile staefa {
         output "Samsung Electric Company U28E590 HTPK118955" mode 2560x1440 position 0,450
         output "Dell Inc. DELL P2423DE DWTL1L3" mode 2560x1440 position 2560,0 transform 270
         output eDP-1 mode 2880x1800 position 4000,650
-        exec ~/bin/move-workspaces.sh staefa
+        exec ~/.local/bin/move-workspaces.sh staefa
 }
 
 profile elm {
-        output eDP-1 mode 3200x2000 position 0,623 scale 1.5
-        output "Acer Technologies Acer CB280HK T1HAA0014200" mode 3840x2160 position 2133,623 scale 1.5
-        output "ASUSTek COMPUTER INC VG27A L3LMQS108121" mode 2560x1440 position 4693,155 transform 90
-        exec ~/bin/move-workspaces.sh elm
+        output eDP-1 mode 3200x2000 position 0,802 scale 1.5
+        output "Acer Technologies Acer CB280HK T1HAA0014200" mode 3840x2160 position 2133,581 scale 1.5
+        output "Dell Inc. S2719DGF BCD3CY2" mode 2560x1440 position 4693,0 transform 90
+        exec ~/.local/bin/move-workspaces.sh elm
 }
 
 profile tuebingen {
         output eDP-1 mode 2880x1800 position 959,469 scale 1.5
         output "LG Electronics LG HDR 4K 0x0001224A" mode 2560x1440 position 2880,380
         output "Philips Consumer Electronics Company PHL 272B8Q UK01841003832" mode 2560x1440 position 5440,0 transform 90
-        exec ~/bin/move-workspaces.sh tuebingen
+        exec ~/.local/bin/move-workspaces.sh tuebingen
 }
 
 profile dufferin {
         output eDP-1 mode 3200x2000 position 0,721 scale 1.5
         output "Ancor Communications Inc ASUS PB278 E3LMTF122570" mode 2560x1440 position 2133,0
-        exec ~/bin/move-workspaces.sh dufferin
+        exec ~/.local/bin/move-workspaces.sh dufferin
 }
 
 profile {

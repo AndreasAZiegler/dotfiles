@@ -60,7 +60,7 @@ case $1 in
         ;;
     elm)
         middle=$(swaymsg -t get_outputs --pretty|grep 'Acer Technologies Acer CB280HK T1HAA0014200'|cut -d' ' -f2)
-        right=$(swaymsg -t get_outputs --pretty|grep 'ASUSTek COMPUTER INC VG27A L3LMQS108121'|cut -d' ' -f2)
+        right=$(swaymsg -t get_outputs --pretty|grep 'Dell Inc. S2719DGF BCD3CY2'|cut -d' ' -f2)
         mapping=("1:$middle" "2:$right" "3:$laptop")
         ;;
     lenzerheide)
